@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vores Sommerhus</title>
+  <style>
+    /* Grundlæggende opsætning */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: #3a3a3a;
+      background-color: #faf7f2;
+    }
+
+    /* Header med billede */
+    header {
+      background: linear-gradient(rgba(60, 80, 60, 0.4), rgba(60, 80, 60, 0.6)),
+                  url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=1600');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.95;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #fff;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5a6b4d;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #eef2e8;
+    }
+
+    /* Indhold */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      color: #5a6b4d;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      border-bottom: 2px solid #eef2e8;
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      color: #3a3a3a;
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul.info-liste {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.info-liste li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eef2e8;
+    }
+
+    ul.info-liste li:last-child {
+      border-bottom: none;
+    }
+
+    ul.info-liste strong {
+      color: #5a6b4d;
+      display: inline-block;
+      min-width: 130px;
+    }
+
+    /* Info-bokse */
+    .info-boks {
+      background-color: #fff;
+      border-left: 4px solid #8ba876;
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #5a6b4d;
+      color: white;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #d4e0c4;
+    }
+
+    /* Desktop-tilpasning */
+    @media (min-width: 768px) {
+      header {
+        padding: 8rem 2rem 7rem;
+      }
+      header h1 {
+        font-size: 3rem;
+      }
+      header p {
+        font-size: 1.3rem;
+      }
+      main {
+        padding: 3rem 2rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Velkommen til vores sommerhus</h1>
+    <p>Et fristed for familie og venner</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#praktisk">Praktisk</a></li>
+      <li><a href="#huset">Huset</a></li>
+      <li><a href="#omraadet">Området</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section id="praktisk">
+      <h2>Praktiske oplysninger</h2>
+      <p>Her finder du de vigtigste informationer til dit ophold.</p>
+      <ul class="info-liste">
+        <li><strong>Adresse:</strong> [Indsæt adresse]</li>
+        <li><strong>Nøgle:</strong> [Hvor findes nøglen?]</li>
+        <li><strong>WiFi-navn:</strong> [WiFi-navn]</li>
+        <li><strong>WiFi-kode:</strong> [Kode]</li>
+        <li><strong>Affaldssortering:</strong> [Kort vejledning]</li>
+      </ul>
+    </section>
+
+    <section id="huset">
+      <h2>Om huset</h2>
+      <p>Skriv her lidt om sommerhuset – hvornår det er bygget, hvor mange det kan sove, hvad der er særligt ved det.</p>
+
+      <h3>Opvarmning</h3>
+      <p>Beskriv hvordan varmen reguleres, og hvor termostaten sidder.</p>
+
+      <h3>Brændeovn</h3>
+      <div class="info-boks">
+        <strong>Vigtigt:</strong> Husk at lukke spjældet, når ovnen er slukket. Brænde findes i [skur/udhus].
+      </div>
+
+      <h3>Husregler</h3>
+      <p>Her kan du samle små huskeregler: sko af, husdyr, rygning, oprydning ved afrejse, osv.</p>
+    </section>
+
+    <section id="omraadet">
+      <h2>Området og oplevelser</h2>
+      <p>En lille guide til, hvad I kan opleve i nærheden.</p>
+
+      <h3>Strand og natur</h3>
+      <p>Beskriv vejen til nærmeste strand, gode gåture, svampeskov osv.</p>
+
+      <h3>Indkøb</h3>
+      <p>Nærmeste købmand, bageren der åbner tidligt, det gode fiskeudsalg.</p>
+
+      <h3>Spisesteder</h3>
+      <p>Et par favoritter – både de hyggelige og de festlige.</p>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Er der noget galt, eller har du spørgsmål under opholdet?</p>
+      <div class="info-boks">
+        <strong>Ring eller skriv:</strong><br>
+        Tom – [telefonnummer]<br>
+        <a href="mailto:tomholsoe@gmail.com">tomholsoe@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Vores Sommerhus · God ferie! 🌿</p>
+  </footer>
+
+</body>
+</html>
