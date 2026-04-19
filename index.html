@@ -182,6 +182,101 @@
       margin-bottom: 1rem;
     }
 
+    /* Kalender styling */
+    .calendar-small {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .calendar-small thead th {
+      background-color: #5a6b4d;
+      color: white;
+      padding: 0.75rem;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .calendar-small tbody td {
+      border: 1px solid #eef2e8;
+      padding: 0.75rem;
+      text-align: center;
+      height: 60px;
+      vertical-align: top;
+      font-size: 0.85rem;
+    }
+
+    .calendar-small .date-num {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+
+    .calendar-small .date-status {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .calendar-small .ledig {
+      background-color: #c8e6c9;
+    }
+
+    .calendar-small .optaget {
+      background-color: #ffcdd2;
+    }
+
+    .calendar-small .other-month {
+      background-color: #fafafa;
+      color: #ccc;
+    }
+
+    .calendar-nav-small {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .calendar-nav-small button {
+      padding: 0.4rem 0.8rem;
+      background-color: #eef2e8;
+      color: #5a6b4d;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+    }
+
+    .calendar-nav-small button:hover {
+      background-color: #d4e0c4;
+    }
+
+    .calendar-legend {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    .calendar-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .calendar-legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+    }
+
     ul.info-liste {
       list-style: none;
       padding-left: 0;
@@ -264,6 +359,7 @@
       <li><a href="#huset" data-key="nav-house">Huset</a></li>
       <li><a href="#omraadet" data-key="nav-area">Området</a></li>
       <li><a href="#kontakt" data-key="nav-contact">Kontakt</a></li>
+      <li><a href="#kalender" data-key="nav-calendar">Kalender</a></li>
       <li><a href="admin.html" style="color: #d32f2f; font-weight: bold;">Admin</a></li>
     </ul>
   </nav>
@@ -323,6 +419,43 @@
       </div>
     </section>
 
+    <section id="kalender">
+      <h2 data-key="calendar-title">Kalender</h2>
+      <p data-key="calendar-intro">Se her hvilke datoer huset er ledigti eller optaget.</p>
+      
+      <div class="calendar-nav-small">
+        <button onclick="previousCalendarMonth()">← Forrige</button>
+        <button id="calendarMonthYear"></button>
+        <button onclick="nextCalendarMonth()">Næste →</button>
+      </div>
+
+      <table class="calendar-small" id="calendarSmall">
+        <thead>
+          <tr>
+            <th>Man</th>
+            <th>Tir</th>
+            <th>Ons</th>
+            <th>Tor</th>
+            <th>Fre</th>
+            <th>Lør</th>
+            <th>Søn</th>
+          </tr>
+        </thead>
+        <tbody id="calendarSmallBody"></tbody>
+      </table>
+
+      <div class="calendar-legend">
+        <div class="calendar-legend-item">
+          <div class="calendar-legend-color" style="background-color: #c8e6c9;"></div>
+          <span data-key="calendar-available">Ledig</span>
+        </div>
+        <div class="calendar-legend-item">
+          <div class="calendar-legend-color" style="background-color: #ffcdd2;"></div>
+          <span data-key="calendar-booked">Optaget</span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -340,6 +473,7 @@
         "nav-house": "Huset",
         "nav-area": "Området",
         "nav-contact": "Kontakt",
+        "nav-calendar": "Kalender",
         "practical-title": "Praktiske oplysninger",
         "practical-intro": "Her finder du de vigtigste informationer til dit ophold.",
         "address-label": "Adresse:",
@@ -370,6 +504,10 @@
         "contact-title": "Kontakt",
         "contact-intro": "Er der noget galt, eller har du spørgsmål under opholdet?",
         "contact-call": "Ring eller skriv:",
+        "calendar-title": "Kalender",
+        "calendar-intro": "Se her hvilke datoer huset er ledigti eller optaget.",
+        "calendar-available": "Ledig",
+        "calendar-booked": "Optaget",
         "footer-text": "Vores Sommerhus · God ferie! 🌿"
       },
       en: {
@@ -380,6 +518,7 @@
         "nav-house": "The House",
         "nav-area": "The Area",
         "nav-contact": "Contact",
+        "nav-calendar": "Calendar",
         "practical-title": "Practical information",
         "practical-intro": "Here you will find the most important information for your stay.",
         "address-label": "Address:",
@@ -410,6 +549,10 @@
         "contact-title": "Contact",
         "contact-intro": "Is something wrong, or do you have questions during your stay?",
         "contact-call": "Call or write:",
+        "calendar-title": "Calendar",
+        "calendar-intro": "See here which dates the house is available or booked.",
+        "calendar-available": "Available",
+        "calendar-booked": "Booked",
         "footer-text": "Our Summer House · Have a great holiday! 🌿"
       },
       fr: {
@@ -420,6 +563,7 @@
         "nav-house": "La Maison",
         "nav-area": "La Région",
         "nav-contact": "Contact",
+        "nav-calendar": "Calendrier",
         "practical-title": "Informations pratiques",
         "practical-intro": "Ici vous trouverez les informations les plus importantes pour votre séjour.",
         "address-label": "Adresse:",
@@ -450,6 +594,10 @@
         "contact-title": "Contact",
         "contact-intro": "Quelque chose ne va pas, ou avez-vous des questions pendant votre séjour?",
         "contact-call": "Appelez ou écrivez:",
+        "calendar-title": "Calendrier",
+        "calendar-intro": "Voir ici quelles dates la maison est disponible ou réservée.",
+        "calendar-available": "Disponible",
+        "calendar-booked": "Réservé",
         "footer-text": "Notre Maison d'Été · Bonnes vacances! 🌿"
       },
       de: {
@@ -460,6 +608,7 @@
         "nav-house": "Das Haus",
         "nav-area": "Die Region",
         "nav-contact": "Kontakt",
+        "nav-calendar": "Kalender",
         "practical-title": "Praktische Informationen",
         "practical-intro": "Hier finden Sie die wichtigsten Informationen für Ihren Aufenthalt.",
         "address-label": "Adresse:",
@@ -490,6 +639,10 @@
         "contact-title": "Kontakt",
         "contact-intro": "Stimmt etwas nicht, oder haben Sie Fragen während Ihres Aufenthalts?",
         "contact-call": "Rufen Sie an oder schreiben Sie:",
+        "calendar-title": "Kalender",
+        "calendar-intro": "Sehen Sie hier, welche Termine das Haus verfügbar oder reserviert sind.",
+        "calendar-available": "Verfügbar",
+        "calendar-booked": "Reserviert",
         "footer-text": "Unser Sommerhaus · Schöne Ferien! 🌿"
       }
     };
@@ -552,7 +705,85 @@
         text = text.replace(/\[Karte\]/g, '<a href="https://maps.app.goo.gl/MjPFGmCFoY7KpjKRA?g_st=im" target="_blank">Karte</a>');
         wasteTextElement.innerHTML = text;
       }
+
+      // Initialiser kalender
+      renderSmallCalendar();
     });
+
+    // Kalender-variabler
+    let currentCalendarDate = new Date();
+
+    // Hent bookinger fra localStorage
+    function getBookings() {
+      return JSON.parse(localStorage.getItem('housebookings')) || [];
+    }
+
+    // Render lille kalender på forsiden
+    function renderSmallCalendar() {
+      const year = currentCalendarDate.getFullYear();
+      const month = currentCalendarDate.getMonth();
+      
+      const monthNames = ['Januar', 'Februar', 'Marts', 'April', 'Maj', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'December'];
+      document.getElementById('calendarMonthYear').textContent = `${monthNames[month]} ${year}`;
+      
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const daysInPrevMonth = new Date(year, month, 0).getDate();
+      
+      const startDay = firstDay === 0 ? 6 : firstDay - 1;
+      
+      const calendarBody = document.getElementById('calendarSmallBody');
+      calendarBody.innerHTML = '';
+      
+      const bookings = getBookings();
+      let date = 1;
+      let nextMonthDate = 1;
+      
+      for (let i = 0; i < 6; i++) {
+        const row = document.createElement('tr');
+        
+        for (let j = 0; j < 7; j++) {
+          const cell = document.createElement('td');
+          
+          if (i === 0 && j < startDay) {
+            cell.classList.add('other-month');
+            cell.textContent = daysInPrevMonth - startDay + j + 1;
+          } else if (date > daysInMonth) {
+            cell.classList.add('other-month');
+            cell.textContent = nextMonthDate++;
+          } else {
+            const fullDate = new Date(year, month, date);
+            const dateString = fullDate.toISOString().split('T')[0];
+            
+            const booking = bookings.find(b => b.date === dateString);
+            if (booking) {
+              cell.classList.add(booking.status);
+              cell.innerHTML = `<span class="date-num">${date}</span><span class="date-status">${booking.guestName || ''}</span>`;
+            } else {
+              cell.classList.add('ledig');
+              cell.innerHTML = `<span class="date-num">${date}</span>`;
+            }
+            
+            date++;
+          }
+          
+          row.appendChild(cell);
+        }
+        
+        calendarBody.appendChild(row);
+        if (date > daysInMonth) break;
+      }
+    }
+
+    function previousCalendarMonth() {
+      currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+      renderSmallCalendar();
+    }
+
+    function nextCalendarMonth() {
+      currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+      renderSmallCalendar();
+    }
   </script>
 
 </body>
