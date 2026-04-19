@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vores Sommerhus</title>
+  <title data-key="title">Vores Sommerhus</title>
   <style>
     /* Grundlæggende opsætning */
     * {
@@ -19,6 +19,69 @@
       background-color: #faf7f2;
     }
 
+    /* Sprogvalg */
+    .language-switcher {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.5rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 0.25rem;
+      z-index: 10;
+    }
+
+    .language-switcher button {
+      background: none;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      font-weight: 500;
+      color: #5a6b4d;
+      border-radius: 3px;
+      transition: background-color 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .language-switcher button:hover {
+      background-color: #eef2e8;
+    }
+
+    .language-switcher button.active {
+      background-color: #8ba876;
+      color: white;
+    }
+
+    /* Mobile-first justeringer */
+    @media (max-width: 480px) {
+      .language-switcher {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.25rem;
+        gap: 0.125rem;
+      }
+
+      .language-switcher button {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.8rem;
+        min-width: 2rem;
+      }
+
+      header {
+        padding: 4rem 1rem 3rem;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+
     /* Header med billede */
     header {
       background: linear-gradient(rgba(60, 80, 60, 0.4), rgba(60, 80, 60, 0.6)),
@@ -28,6 +91,20 @@
       color: white;
       padding: 5rem 1.5rem 4rem;
       text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.95;
     }
 
     header h1 {
@@ -171,69 +248,75 @@
 <body>
 
   <header>
-    <h1>Velkommen til vores hus i bjergene</h1>
-    <p>Et fristed for familie og venner</p>
+    <div class="language-switcher">
+      <button id="lang-da" class="active">DA</button>
+      <button id="lang-en">EN</button>
+      <button id="lang-fr">FR</button>
+      <button id="lang-de">DE</button>
+    </div>
+    <h1 data-key="header-title">Velkommen til vores hus i bjergene</h1>
+    <p data-key="header-subtitle">Et fristed for familie og venner</p>
   </header>
 
   <nav>
     <ul>
-      <li><a href="#praktisk">Praktisk</a></li>
-      <li><a href="#huset">Huset</a></li>
-      <li><a href="#omraadet">Området</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#praktisk" data-key="nav-practical">Praktisk</a></li>
+      <li><a href="#huset" data-key="nav-house">Huset</a></li>
+      <li><a href="#omraadet" data-key="nav-area">Området</a></li>
+      <li><a href="#kontakt" data-key="nav-contact">Kontakt</a></li>
     </ul>
   </nav>
 
   <main>
 
     <section id="praktisk">
-      <h2>Praktiske oplysninger</h2>
-      <p>Her finder du de vigtigste informationer til dit ophold.</p>
+      <h2 data-key="practical-title">Praktiske oplysninger</h2>
+      <p data-key="practical-intro">Her finder du de vigtigste informationer til dit ophold.</p>
       <ul class="info-liste">
-        <li><strong>Adresse:</strong> Chemine de la Fragniere 153, 1997 Haute-Nendaz</li>
-        <li><strong>Nøgle:</strong> I nøgleboksen til venstre for hoveddøren. Kode får du særskilt.</li>
-        <li><strong>WiFi-navn:</strong> [WiFi-navn]</li>
-        <li><strong>WiFi-kode:</strong> [Kode]</li>
-        <li><strong>Affaldssortering:</strong> Almindeligt husholdningsaffald skal lægges i de officielle, afgiftsbelagte affaldsposer, som kan købes i supermarkedet. Kun disse poser må smides i affaldscontainerne. Glas, papir, pap, metal, PET og andet sorteret affald skal afleveres separat samme sted. Affald må ikke stilles ved siden af containere eller efterlades uden for de anviste områder. Så tag løbende affald med jer. Containerne er på Rte de la Peroua (<a href="https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmaps.app.goo.gl%2FMjPFGmCFoY7KpjKRA%3Fg_st%3Dim&data=05%7C02%7Chol%40poulschmith.dk%7Cc2c224ab1ab64593272208de9e0a6da5%7C2b9750b089ab4b5dbb34b0ffdac30dcf%7C0%7C0%7C639121964774163185%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=5PVHmmPJibHzneUtU52BOCkeS6zHL46S90pCgEUnNsE%3D&reserved=0">kort</a>).</li>
+        <li><strong data-key="address-label">Adresse:</strong> Chemine de la Fragniere 153, 1997 Haute-Nendaz</li>
+        <li><strong data-key="key-label">Nøgle:</strong> <span data-key="key-text">I nøgleboksen til venstre for hoveddøren. Kode får du særskilt.</span></li>
+        <li><strong data-key="wifi-name-label">WiFi-navn:</strong> [WiFi-navn]</li>
+        <li><strong data-key="wifi-code-label">WiFi-kode:</strong> [Kode]</li>
+        <li><strong data-key="waste-label">Affaldssortering:</strong> <span data-key="waste-text">Almindeligt husholdningsaffald skal lægges i de officielle, afgiftsbelagte affaldsposer, som kan købes i supermarkedet. Kun disse poser må smides i affaldscontainerne. Glas, papir, pap, metal, PET og andet sorteret affald skal afleveres separat samme sted. Affald må ikke stilles ved siden af containere eller efterlades uden for de anviste områder. Så tag løbende affald med jer. Containerne er på Rte de la Peroua (<a href="https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmaps.app.goo.gl%2FMjPFGmCFoY7KpjKRA%3Fg_st%3Dim&data=05%7C02%7Chol%40poulschmith.dk%7Cc2c224ab1ab64593272208de9e0a6da5%7C2b9750b089ab4b5dbb34b0ffdac30dcf%7C0%7C0%7C639121964774163185%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=5PVHmmPJibHzneUtU52BOCkeS6zHL46S90pCgEUnNsE%3D&reserved=0">kort</a>).</span></li>
       </ul>
     </section>
 
     <section id="huset">
-      <h2>Om huset</h2>
-      <p>Vores hus i Haute-Nendaz ligger med en fantastisk udsigt over Rhone-dalen og bjergene. Huset er i flere plan med god plads til både afslapning og samvær, og en stor terrasse hvor man virkelig kan nyde solen. Det ligger roligt, men stadig tæt på både centrum og liftene. Om vinteren er der ski tæt på, og om sommeren masser af vandreture lige udenfor døren.</p>
+      <h2 data-key="house-title">Om huset</h2>
+      <p data-key="house-description">Vores hus i Haute-Nendaz ligger med en fantastisk udsigt over Rhone-dalen og bjergene. Huset er i flere plan med god plads til både afslapning og samvær, og en stor terrasse hvor man virkelig kan nyde solen. Det ligger roligt, men stadig tæt på både centrum og liftene. Om vinteren er der ski tæt på, og om sommeren masser af vandreture lige udenfor døren.</p>
 
-      <h3>Opvarmning</h3>
-      <p>Huset opvarmes via termostater placeret rund omkring samt el-paneler. Der er også en skøn pejs, som giver god varme. Husk at tænde for ventilatoren på pejsen, når den bruges,</p>
+      <h3 data-key="heating-title">Opvarmning</h3>
+      <p data-key="heating-description">Huset opvarmes via termostater placeret rund omkring samt el-paneler. Der er også en skøn pejs, som giver god varme. Husk at tænde for ventilatoren på pejsen, når den bruges,</p>
 
-      <h3>Brændeovn</h3>
+      <h3 data-key="fireplace-title">Brændeovn</h3>
       <div class="info-boks">
-        <strong>Vigtigt:</strong> Husk at tænde for ventilatoren, når pejsen bruges. Brænde findes foran huset ved bilparkeringen.
+        <strong data-key="important-label">Vigtigt:</strong> <span data-key="fireplace-text">Husk at tænde for ventilatoren, når pejsen bruges. Brænde findes foran huset ved bilparkeringen.</span>
       </div>
 
-      <h3>Husregler</h3>
-      <p>Behandl huset som var det dit eget.</p>
+      <h3 data-key="rules-title">Husregler</h3>
+      <p data-key="rules-text">Behandl huset som var det dit eget.</p>
     </section>
 
     <section id="omraadet">
-      <h2>Området og oplevelser</h2>
-      <p>En lille guide til, hvad I kan opleve i nærheden.</p>
+      <h2 data-key="area-title">Området og oplevelser</h2>
+      <p data-key="area-intro">En lille guide til, hvad I kan opleve i nærheden.</p>
 
-      <h3>Ski og natur</h3>
-      <p>Fra huset er der adgang til skiområdet 4 Vallées, som er det største skiområde i Schweiz. Der er mange kilometer cykel- og vandrestier, som starter lige ved huset.</p>
-      <p>10 minutters gang fra huset ligger der to tennisbaner, som kan lejes via <a href="https://nendaz.plugin.ch/index.php">https://nendaz.plugin.ch/index.php</a></p>
+      <h3 data-key="ski-nature-title">Ski og natur</h3>
+      <p data-key="ski-nature-description">Fra huset er der adgang til skiområdet 4 Vallées, som er det største skiområde i Schweiz. Der er mange kilometer cykel- og vandrestier, som starter lige ved huset.</p>
+      <p data-key="tennis-description">10 minutters gang fra huset ligger der to tennisbaner, som kan lejes via <a href="https://nendaz.plugin.ch/index.php">https://nendaz.plugin.ch/index.php</a></p>
 
-      <h3>Indkøb</h3>
-      <p>Indkøb i Haute-Nendaz er nemt og lokalt. I byen finder man en Coop med et godt udvalg af dagligvarer, frisk frugt og alt det nødvendige til både korte og længere ophold. Der er også en lokal slagter med rigtig gode kødvarer og specialiteter, som er værd at prøve. Og så selvfølgelig flere boulangerie, hvor man kan hente friskbagt brød og croissanter.</p>
+      <h3 data-key="shopping-title">Indkøb</h3>
+      <p data-key="shopping-description">Indkøb i Haute-Nendaz er nemt og lokalt. I byen finder man en Coop med et godt udvalg af dagligvarer, frisk frugt og alt det nødvendige til både korte og længere ophold. Der er også en lokal slagter med rigtig gode kødvarer og specialiteter, som er værd at prøve. Og så selvfølgelig flere boulangerie, hvor man kan hente friskbagt brød og croissanter.</p>
 
-      <h3>Spisesteder</h3>
-      <p>Der er flere restauranter i Haute-Nendaz, som alle ligger rundt om torvet i byen. Byens vinbar "La Verre d'ici" er altid også et besøg værd - både om dagen til et glas i solen og om aftenen i selskab med byens beboere.</p>
+      <h3 data-key="dining-title">Spisesteder</h3>
+      <p data-key="dining-description">Der er flere restauranter i Haute-Nendaz, som alle ligger rundt om torvet i byen. Byens vinbar "La Verre d'ici" er altid også et besøg værd - både om dagen til et glas i solen og om aftenen i selskab med byens beboere.</p>
     </section>
 
     <section id="kontakt">
-      <h2>Kontakt</h2>
-      <p>Er der noget galt, eller har du spørgsmål under opholdet?</p>
+      <h2 data-key="contact-title">Kontakt</h2>
+      <p data-key="contact-intro">Er der noget galt, eller har du spørgsmål under opholdet?</p>
       <div class="info-boks">
-        <strong>Ring eller skriv:</strong><br>
+        <strong data-key="contact-call">Ring eller skriv:</strong><br>
         Tom – +4525430315<br>
         <a href="mailto:tomholsoe@gmail.com">tomholsoe@gmail.com</a>
       </div>
@@ -242,7 +325,209 @@
   </main>
 
   <footer>
-    <p>Vores Sommerhus · God ferie! 🌿</p>
+    <p data-key="footer-text">Vores Sommerhus · God ferie! 🌿</p>
   </footer>
+
+  <script>
+    // Sprogoversættelser
+    const translations = {
+      da: {
+        title: "Vores Sommerhus",
+        "header-title": "Velkommen til vores hus i bjergene",
+        "header-subtitle": "Et fristed for familie og venner",
+        "nav-practical": "Praktisk",
+        "nav-house": "Huset",
+        "nav-area": "Området",
+        "nav-contact": "Kontakt",
+        "practical-title": "Praktiske oplysninger",
+        "practical-intro": "Her finder du de vigtigste informationer til dit ophold.",
+        "address-label": "Adresse:",
+        "key-label": "Nøgle:",
+        "key-text": "I nøgleboksen til venstre for hoveddøren. Kode får du særskilt.",
+        "wifi-name-label": "WiFi-navn:",
+        "wifi-code-label": "WiFi-kode:",
+        "waste-label": "Affaldssortering:",
+        "waste-text": "Almindeligt husholdningsaffald skal lægges i de officielle, afgiftsbelagte affaldsposer, som kan købes i supermarkedet. Kun disse poser må smides i affaldscontainerne. Glas, papir, pap, metal, PET og andet sorteret affald skal afleveres separat samme sted. Affald må ikke stilles ved siden af containere eller efterlades uden for de anviste områder. Så tag løbende affald med jer. Containerne er på Rte de la Peroua (kort).",
+        "house-title": "Om huset",
+        "house-description": "Vores hus i Haute-Nendaz ligger med en fantastisk udsigt over Rhone-dalen og bjergene. Huset er i flere plan med god plads til både afslapning og samvær, og en stor terrasse hvor man virkelig kan nyde solen. Det ligger roligt, men stadig tæt på både centrum og liftene. Om vinteren er der ski tæt på, og om sommeren masser af vandreture lige udenfor døren.",
+        "heating-title": "Opvarmning",
+        "heating-description": "Huset opvarmes via termostater placeret rund omkring samt el-paneler. Der er også en skøn pejs, som giver god varme. Husk at tænde for ventilatoren på pejsen, når den bruges,",
+        "fireplace-title": "Brændeovn",
+        "important-label": "Vigtigt:",
+        "fireplace-text": "Husk at tænde for ventilatoren, når pejsen bruges. Brænde findes foran huset ved bilparkeringen.",
+        "rules-title": "Husregler",
+        "rules-text": "Behandl huset som var det dit eget.",
+        "area-title": "Området og oplevelser",
+        "area-intro": "En lille guide til, hvad I kan opleve i nærheden.",
+        "ski-nature-title": "Ski og natur",
+        "ski-nature-description": "Fra huset er der adgang til skiområdet 4 Vallées, som er det største skiområde i Schweiz. Der er mange kilometer cykel- og vandrestier, som starter lige ved huset.",
+        "tennis-description": "10 minutters gang fra huset ligger der to tennisbaner, som kan lejes via https://nendaz.plugin.ch/index.php",
+        "shopping-title": "Indkøb",
+        "shopping-description": "Indkøb i Haute-Nendaz er nemt og lokalt. I byen finder man en Coop med et godt udvalg af dagligvarer, frisk frugt og alt det nødvendige til både korte og længere ophold. Der er også en lokal slagter med rigtig gode kødvarer og specialiteter, som er værd at prøve. Og så selvfølgelig flere boulangerie, hvor man kan hente friskbagt brød og croissanter.",
+        "dining-title": "Spisesteder",
+        "dining-description": "Der er flere restauranter i Haute-Nendaz, som alle ligger rundt om torvet i byen. Byens vinbar \"La Verre d'ici\" er altid også et besøg værd - både om dagen til et glas i solen og om aftenen i selskab med byens beboere.",
+        "contact-title": "Kontakt",
+        "contact-intro": "Er der noget galt, eller har du spørgsmål under opholdet?",
+        "contact-call": "Ring eller skriv:",
+        "footer-text": "Vores Sommerhus · God ferie! 🌿"
+      },
+      en: {
+        title: "Our Summer House",
+        "header-title": "Welcome to our house in the mountains",
+        "header-subtitle": "A sanctuary for family and friends",
+        "nav-practical": "Practical",
+        "nav-house": "The House",
+        "nav-area": "The Area",
+        "nav-contact": "Contact",
+        "practical-title": "Practical information",
+        "practical-intro": "Here you will find the most important information for your stay.",
+        "address-label": "Address:",
+        "key-label": "Key:",
+        "key-text": "In the key box to the left of the main door. Code provided separately.",
+        "wifi-name-label": "WiFi name:",
+        "wifi-code-label": "WiFi code:",
+        "waste-label": "Waste sorting:",
+        "waste-text": "Regular household waste must be placed in the official, tax-paid waste bags, which can be purchased at the supermarket. Only these bags may be thrown in the waste containers. Glass, paper, cardboard, metal, PET and other sorted waste must be delivered separately at the same place. Waste must not be placed next to containers or left outside designated areas. So take waste with you regularly. The containers are on Rte de la Peroua (map).",
+        "house-title": "About the house",
+        "house-description": "Our house in Haute-Nendaz has a fantastic view over the Rhone valley and the mountains. The house is on several levels with plenty of space for both relaxation and socializing, and a large terrace where you can really enjoy the sun. It is quiet, but still close to both the center and the lifts. In winter there is skiing nearby, and in summer plenty of hiking trails right outside the door.",
+        "heating-title": "Heating",
+        "heating-description": "The house is heated via thermostats placed around as well as electric panels. There is also a nice fireplace that provides good heat. Remember to turn on the fan on the fireplace when using it,",
+        "fireplace-title": "Fireplace",
+        "important-label": "Important:",
+        "fireplace-text": "Remember to turn on the fan when using the fireplace. Firewood is located in front of the house at the car parking.",
+        "rules-title": "House rules",
+        "rules-text": "Treat the house as if it were your own.",
+        "area-title": "The area and experiences",
+        "area-intro": "A small guide to what you can experience nearby.",
+        "ski-nature-title": "Ski and nature",
+        "ski-nature-description": "From the house there is access to the ski area 4 Vallées, which is the largest ski area in Switzerland. There are many kilometers of cycling and hiking trails that start right at the house.",
+        "tennis-description": "A 10-minute walk from the house there are two tennis courts that can be rented via https://nendaz.plugin.ch/index.php",
+        "shopping-title": "Shopping",
+        "shopping-description": "Shopping in Haute-Nendaz is easy and local. In the town you will find a Coop with a good selection of groceries, fresh fruit and everything necessary for both short and longer stays. There is also a local butcher with really good meat products and specialties worth trying. And of course several boulangeries where you can pick up freshly baked bread and croissants.",
+        "dining-title": "Dining",
+        "dining-description": "There are several restaurants in Haute-Nendaz, all located around the town square. The town's wine bar \"La Verre d'ici\" is always worth a visit - both during the day for a glass in the sun and in the evening in the company of the town's residents.",
+        "contact-title": "Contact",
+        "contact-intro": "Is something wrong, or do you have questions during your stay?",
+        "contact-call": "Call or write:",
+        "footer-text": "Our Summer House · Have a great holiday! 🌿"
+      },
+      fr: {
+        title: "Notre Maison d'Été",
+        "header-title": "Bienvenue dans notre maison de montagne",
+        "header-subtitle": "Un sanctuaire pour la famille et les amis",
+        "nav-practical": "Pratique",
+        "nav-house": "La Maison",
+        "nav-area": "La Région",
+        "nav-contact": "Contact",
+        "practical-title": "Informations pratiques",
+        "practical-intro": "Ici vous trouverez les informations les plus importantes pour votre séjour.",
+        "address-label": "Adresse:",
+        "key-label": "Clé:",
+        "key-text": "Dans la boîte à clés à gauche de la porte principale. Code fourni séparément.",
+        "wifi-name-label": "Nom WiFi:",
+        "wifi-code-label": "Code WiFi:",
+        "waste-label": "Tri des déchets:",
+        "waste-text": "Les déchets ménagers ordinaires doivent être placés dans les sacs à déchets officiels, taxés, qui peuvent être achetés au supermarché. Seuls ces sacs peuvent être jetés dans les conteneurs à déchets. Le verre, le papier, le carton, le métal, le PET et autres déchets triés doivent être livrés séparément au même endroit. Les déchets ne doivent pas être placés à côté des conteneurs ou laissés en dehors des zones désignées. Alors emportez les déchets régulièrement. Les conteneurs sont sur Rte de la Peroua (carte).",
+        "house-title": "À propos de la maison",
+        "house-description": "Notre maison à Haute-Nendaz offre une vue fantastique sur la vallée du Rhône et les montagnes. La maison est sur plusieurs niveaux avec beaucoup d'espace pour la détente et les rencontres sociales, et une grande terrasse où vous pouvez vraiment profiter du soleil. Elle est calme, mais toujours proche du centre et des remontées mécaniques. En hiver, il y a du ski à proximité, et en été beaucoup de sentiers de randonnée juste devant la porte.",
+        "heating-title": "Chauffage",
+        "heating-description": "La maison est chauffée via des thermostats placés autour ainsi que des panneaux électriques. Il y a aussi une belle cheminée qui fournit une bonne chaleur. N'oubliez pas d'allumer le ventilateur sur la cheminée lorsque vous l'utilisez,",
+        "fireplace-title": "Cheminée",
+        "important-label": "Important:",
+        "fireplace-text": "N'oubliez pas d'allumer le ventilateur lorsque vous utilisez la cheminée. Le bois de chauffage se trouve devant la maison au parking des voitures.",
+        "rules-title": "Règles de la maison",
+        "rules-text": "Traitez la maison comme si elle était la vôtre.",
+        "area-title": "La région et les expériences",
+        "area-intro": "Un petit guide sur ce que vous pouvez découvrir à proximité.",
+        "ski-nature-title": "Ski et nature",
+        "ski-nature-description": "De la maison, il y a accès au domaine skiable 4 Vallées, qui est le plus grand domaine skiable de Suisse. Il y a de nombreux kilomètres de pistes cyclables et de randonnée qui commencent juste à la maison.",
+        "tennis-description": "À 10 minutes de marche de la maison se trouvent deux courts de tennis qui peuvent être loués via https://nendaz.plugin.ch/index.php",
+        "shopping-title": "Achats",
+        "shopping-description": "Les achats à Haute-Nendaz sont faciles et locaux. En ville, vous trouverez une Coop avec une bonne sélection d'épicerie, de fruits frais et tout le nécessaire pour des séjours courts ou plus longs. Il y a aussi un boucher local avec de très bons produits de viande et des spécialités à essayer. Et bien sûr plusieurs boulangeries où vous pouvez prendre du pain et des croissants fraîchement cuits.",
+        "dining-title": "Restauration",
+        "dining-description": "Il y a plusieurs restaurants à Haute-Nendaz, tous situés autour de la place de la ville. Le bar à vin de la ville \"La Verre d'ici\" vaut toujours une visite - aussi bien pendant la journée pour un verre au soleil qu'en soirée en compagnie des habitants de la ville.",
+        "contact-title": "Contact",
+        "contact-intro": "Quelque chose ne va pas, ou avez-vous des questions pendant votre séjour?",
+        "contact-call": "Appelez ou écrivez:",
+        "footer-text": "Notre Maison d'Été · Bonnes vacances! 🌿"
+      },
+      de: {
+        title: "Unser Sommerhaus",
+        "header-title": "Willkommen in unserem Haus in den Bergen",
+        "header-subtitle": "Ein Zufluchtsort für Familie und Freunde",
+        "nav-practical": "Praktisch",
+        "nav-house": "Das Haus",
+        "nav-area": "Die Region",
+        "nav-contact": "Kontakt",
+        "practical-title": "Praktische Informationen",
+        "practical-intro": "Hier finden Sie die wichtigsten Informationen für Ihren Aufenthalt.",
+        "address-label": "Adresse:",
+        "key-label": "Schlüssel:",
+        "key-text": "Im Schlüsselschrank links von der Haustür. Code wird separat mitgeteilt.",
+        "wifi-name-label": "WiFi-Name:",
+        "wifi-code-label": "WiFi-Code:",
+        "waste-label": "Abfalltrennung:",
+        "waste-text": "Normaler Hausmüll muss in die offiziellen, gebührenpflichtigen Abfallsäcke gegeben werden, die im Supermarkt gekauft werden können. Nur diese Säcke dürfen in die Abfallcontainer geworfen werden. Glas, Papier, Pappe, Metall, PET und andere sortierte Abfälle müssen separat am selben Ort abgegeben werden. Abfall darf nicht neben den Containern platziert oder außerhalb der ausgewiesenen Bereiche zurückgelassen werden. Nehmen Sie daher regelmäßig Abfall mit. Die Container befinden sich auf Rte de la Peroua (Karte).",
+        "house-title": "Über das Haus",
+        "house-description": "Unser Haus in Haute-Nendaz bietet einen fantastischen Blick über das Rhonetal und die Berge. Das Haus ist auf mehreren Ebenen mit viel Platz für Entspannung und Geselligkeit sowie einer großen Terrasse, wo Sie die Sonne wirklich genießen können. Es liegt ruhig, aber immer noch nah am Zentrum und den Liften. Im Winter gibt es Skifahren in der Nähe, und im Sommer viele Wanderwege direkt vor der Tür.",
+        "heating-title": "Heizung",
+        "heating-description": "Das Haus wird über Thermostate, die rundherum platziert sind, sowie über Elektropaneele beheizt. Es gibt auch einen schönen Kamin, der gute Wärme liefert. Denken Sie daran, den Ventilator am Kamin einzuschalten, wenn Sie ihn verwenden,",
+        "fireplace-title": "Kamin",
+        "important-label": "Wichtig:",
+        "fireplace-text": "Denken Sie daran, den Ventilator einzuschalten, wenn Sie den Kamin verwenden. Brennholz befindet sich vor dem Haus beim Autoparkplatz.",
+        "rules-title": "Hausregeln",
+        "rules-text": "Behandeln Sie das Haus, als wäre es Ihr eigenes.",
+        "area-title": "Die Region und Erlebnisse",
+        "area-intro": "Eine kleine Anleitung zu dem, was Sie in der Nähe erleben können.",
+        "ski-nature-title": "Ski und Natur",
+        "ski-nature-description": "Vom Haus aus gibt es Zugang zum Skigebiet 4 Vallées, das das größte Skigebiet der Schweiz ist. Es gibt viele Kilometer Rad- und Wanderwege, die direkt am Haus beginnen.",
+        "tennis-description": "10 Minuten Fußweg vom Haus entfernt liegen zwei Tennisplätze, die über https://nendaz.plugin.ch/index.php gemietet werden können",
+        "shopping-title": "Einkaufen",
+        "shopping-description": "Einkaufen in Haute-Nendaz ist einfach und lokal. In der Stadt finden Sie eine Coop mit guter Auswahl an Lebensmitteln, frischem Obst und allem Notwendigen für kurze oder längere Aufenthalte. Es gibt auch einen lokalen Metzger mit wirklich guten Fleischprodukten und Spezialitäten, die es sich lohnt auszuprobieren. Und natürlich mehrere Bäckereien, wo Sie frisch gebackenes Brot und Croissants holen können.",
+        "dining-title": "Essen",
+        "dining-description": "Es gibt mehrere Restaurants in Haute-Nendaz, die alle um den Stadtplatz herum liegen. Die Weinbar der Stadt \"La Verre d'ici\" ist immer einen Besuch wert - sowohl tagsüber für ein Glas in der Sonne als auch abends in Gesellschaft der Stadtbewohner.",
+        "contact-title": "Kontakt",
+        "contact-intro": "Stimmt etwas nicht, oder haben Sie Fragen während Ihres Aufenthalts?",
+        "contact-call": "Rufen Sie an oder schreiben Sie:",
+        "footer-text": "Unser Sommerhaus · Schöne Ferien! 🌿"
+      }
+    };
+
+    // Funktion til at skifte sprog
+    function switchLanguage(lang) {
+      // Gem valget i localStorage
+      localStorage.setItem('preferred-language', lang);
+
+      // Opdater HTML lang attribut
+      document.documentElement.lang = lang;
+
+      // Opdater alle elementer med data-key
+      const elements = document.querySelectorAll('[data-key]');
+      elements.forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+
+      // Opdater aktiv knap
+      document.querySelectorAll('.language-switcher button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(`lang-${lang}`).classList.add('active');
+    }
+
+    // Event listeners for sprogknapper
+    document.getElementById('lang-da').addEventListener('click', () => switchLanguage('da'));
+    document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+    document.getElementById('lang-fr').addEventListener('click', () => switchLanguage('fr'));
+    document.getElementById('lang-de').addEventListener('click', () => switchLanguage('de'));
+
+    // Indlæs gemt sprog ved sideindlæsning
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('preferred-language') || 'da';
+      switchLanguage(savedLang);
+    });
+  </script>
 
 </body>
